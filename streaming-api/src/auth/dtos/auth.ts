@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty } from "class-validator";
+import { IsEmail, IsNotEmpty, Matches } from "class-validator";
 
 export class SignInDto {
     @IsEmail()
@@ -13,6 +13,7 @@ export class SignUpDto {
     name: string;
 
     @IsNotEmpty()
+    @Matches(/\S/)
     password: string;
 
     @IsEmail()
