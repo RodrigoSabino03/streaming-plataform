@@ -19,8 +19,6 @@ export class UserService {
             throw new UnauthorizedException('User not found');
         }
 
-        console.log(userAlreadyExists);
-
         const res = await this.prismaService.user.delete({ where: { email: data.email } });
 
         if (!res) {
